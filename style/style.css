@@ -1,0 +1,416 @@
+html {
+    font-size: 16px;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.5;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #2f2f2f;
+}
+
+.hero-wrapper {
+  background-image: url(../images/ChatGPT\ Image\ 12\ أكتوبر\ 2025،\ 08_18_25\ ص.png);
+  background-size: cover;
+  background-position: center 60%;
+  background-repeat: no-repeat;
+  min-height: 100dvh;
+  position: relative; /* ضروري عشان الزر يتموضع عليه */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+    position: fixed;
+    width: 98%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    transition: background-color 0.3s ease;
+}
+
+#header.scrolled {
+    background-color: #c1c1c1;
+}
+
+#name {
+    font-size: max(2.34vw, 24px);
+    color: #c1c1c1;
+}
+
+#name.scrolled {
+    color: #1f51ff;
+}
+
+#logo {
+    width: max(3.66vw, 36.6px);
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+main {
+    padding: 0 40px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65%;
+}
+
+#hero-img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 29.29vw;
+    height: 29.29vw;
+}
+
+#wow {
+    font-size: max(3.95vw, 38px);
+    font-weight: 900;
+    color: #1f51ff;
+    line-height: 1.3;
+    text-align: center;
+}
+
+#hero-p {
+color: #c1c1c1;
+font-size: max(2.05vw, 24px);
+font-weight: 800;
+text-align: center;
+}
+
+.img-wrapper {
+    position: relative; /* مهم عشان #CTA يكون نسبي للصورة */
+    width: max(43.881vw, 400px); /* حجم الوالد نفس حجم الصورة */
+}
+
+#background-box {
+    width: 100%; /* الصورة تملأ الوالد */
+    height: auto;
+    display: block;
+}
+
+#CTA {
+    position: absolute; /* مهم عشان يكون فوق الصورة */
+    top: 51%;  /* نص الصورة عمودي */
+    left: 49.68%; /* نص الصورة أفقي */
+    transform: translate(-50%, -50%); /* يركز الرابط بالضبط */
+    background-color: #c1c1c1;
+    width: 42%; /* بدل vw صار نسبة من الوالد عشان يتناسب مع الصورة */
+    height: auto;
+    padding: 0.8em 0; /* بدل ارتفاع ثابت */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1f51ff;
+    text-decoration: none;
+    font-size: 3vw; /* مناسب للشاشة */
+    font-weight: 800;
+    box-sizing: border-box; /* يضمن أن padding لا يزيد الحجم */
+}
+
+#CTA:hover {
+    background-color: #1f51ff;
+    color: #c1c1c1;
+}
+
+
+#top {
+    text-align: center;
+    font-size: max(3.07vw, 28px);
+    color: #c1c1c1;
+}
+
+.features {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.box {
+    width: 30%;
+    height: 27vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #2f2f2f;
+    box-shadow: 0 4px 12px rgb(0, 0, 0, 0.3);
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: #1f51ff;
+    font-size: max(2.93vw, 22px);
+    font-weight: 600;
+}
+
+.feature-p {
+    width: 90%;
+    color: #c1c1c1;
+    font-size: 2.05vw;
+    font-weight: 600;
+    text-align: center;
+}
+
+h3 {
+    font-size: max(42px, 3.07vw);
+    color: #1f51ff;
+    font-weight: 800;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 90%;
+    margin: 30px auto;
+
+}
+
+.faq-item {
+    background: #c1c1c1;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.faq-question {
+    color: #1f51ff;
+    font-size: max(22px, 1.61vw);
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    direction: rtl; /* تأكد اتجاه النص */
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    left: 20px; /* استخدم left بدل right للـ RTL */
+    font-size: max(20px, 1.46vw);
+    transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    color: #000000;
+    font-size: max(18px, 1.32vw);
+    font-weight: 600;
+    display: none;
+    padding: 15px 20px;
+    border-top: 1.5px solid #1f51ff;
+    background: #c1c1c1;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c1c1c1;
+    padding: 20px 0;
+}
+
+.pages {
+     display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.page {
+    width: 30%;
+    height: auto;
+    border: 3px #1f51ff solid;
+    border-radius: 1.5rem;
+}
+
+#CTA-2 {
+    background-color: #c1c1c1;
+    width: max(21.94vw, 220px);
+    height: max(7.32vw, 75px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1f51ff;
+    text-decoration: none;
+    font-size: max(3.51vw, 34px);
+    font-weight: 800;
+    border-radius: 2rem;
+    margin: max(4.39vw, 35px) auto;
+}
+
+#CTA-2:hover {
+    background-color: #1f51ff;
+    color: #c1c1c1;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: max(1.46vw, 15px) 0;
+    background-color: #c1c1c1;
+    padding: max(1.1vw, 11px) max(1.46vw, 15px);
+}
+
+
+#tiktok, #insta {
+    width: max(2.65vw, 36.6px);
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#tiktok:hover, #insta:hover {
+    transform: scale(1.1);
+} 
+
+h4 {
+    font-size: max(1.76vw, 18px);
+    margin: 0;
+    color: #1f51ff;
+}
+
+.social {
+    display: flex;
+    gap: max(1.46vw, 10px);
+}
+
+@media (max-width: 1024px) {
+    #name {
+        font-size: max(4.1vw, 28px);
+    }
+
+    #logo {
+        width: max(6.84vw, 46px);
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    #wow {
+        font-size: max(5.5vw, 26px);
+    }
+
+    #hero-p {
+        font-size: max(3.8vw, 20px);
+    }
+
+    .img-wrapper {
+        width: max(56.0833vw, 300px);
+    }
+
+    #CTA {
+        font-size: max(4.17vw, 24px);
+        padding: 3.9vw 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #top {
+        font-size: max(3.64vw, 28px);
+    }
+
+    h2 {
+        font-size: 2.93vw;
+    }
+
+    .feature-p {
+        font-size: 2.04vw;
+    }
+}
+
+@media (max-width: 540px) {
+
+    header {
+        width: 93%;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    .hero {
+        width: 100%;
+    }
+
+    #wow {
+        font-size: 4.08vh;
+    }
+
+    #hero-p {
+        font-size: 2.57vh;
+    }
+
+    .img-wrapper {
+        width: 300px;
+    }
+
+    #CTA {
+        padding: 3.84vw 0;
+        font-size: 6.51vw;
+    }
+
+    .features {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .box {
+        width: 95%;
+        height: 180px;
+    }
+
+    h2 {
+        font-size: max(4.81vw, 22px);
+    }
+
+    .feature-p {
+        font-size: max(3.33vw, 16px);
+    }
+}
+
+@media (max-width:420px) {
+    header {
+        width: 93%;
+    }
+    
+    main {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 380px) {
+    header {
+        width: 91%;
+    }
+}

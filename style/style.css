@@ -17,7 +17,7 @@ body {
   background-size: cover;
   background-position: center 60%;
   background-repeat: no-repeat;
-  min-height: 100dvh;
+  min-height: 100vh;
   position: relative; /* ضروري عشان الزر يتموضع عليه */
   display: flex;
   flex-direction: column;
@@ -414,3 +414,4 @@ h4 {
         width: 91%;
     }
 }
+

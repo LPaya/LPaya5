@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <title>LPaya</title>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZD4TZWQ11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1ZD4TZWQ11');
+</script>
+    
 </head>
 
 <body>
@@ -23,7 +34,7 @@
 
             <div class="img-wrapper">
                 <img id="background-box" src="images/box.png" alt="background">
-                <a id="CTA" href="https://wa.me/966571589739" target="_blank">صمم الآن</a>
+                <a class="CTA" id="CTA" href="https://wa.me/966571589739" target="_blank">صمم الآن</a>
             </div>
         </main>
     </div>
@@ -92,7 +103,7 @@
             </div>
         </div>
 
-        <a id="CTA-2" href="https://wa.me/966571589739" target="_blank">صمم الآن</a>
+        <a class="CTA" id="CTA-2" href="https://wa.me/966571589739" target="_blank">صمم الآن</a>
     </section>
 
     <footer>
@@ -142,6 +153,22 @@
         });
     </script>
 
+    <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".CTA").forEach(function(element) {
+        element.addEventListener("click", function() {
+          console.log("CTA pressed ✅"); // للتأكد في الـ Console
+          gtag('event', 'cta_click', {
+            'event_category': 'engagement',
+            'event_label': element.innerText,
+            'value': 1
+          });
+        });
+      });
+    });
+  </script>
+
 </body>
+
 
 </html>
